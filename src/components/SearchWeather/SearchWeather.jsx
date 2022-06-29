@@ -60,13 +60,13 @@ export const SearchWeather = () => {
   //Date
 
   let d = new Date();
-  let date = new Date();
+  let date = d.getDate();
   let year = d.getFullYear();
   let month = d.toLocaleDateString("default", { month: "long" });
   let day = d.toLocaleDateString("default", { weekday: "long" });
 
   //Time;
-  let time = d.toLocalDateString([], {
+  let time = d.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
@@ -112,7 +112,7 @@ export const SearchWeather = () => {
               <div className="bg-dark bg-opacity-50 py-3">
                 <h2 className="card-title">{data.name}</h2>
                 <p className="card-text lead">
-                  {day}, {month} {date}, {year}
+                  {day} {month} {date}, {year}
                   <br />
                   {time}
                 </p>
